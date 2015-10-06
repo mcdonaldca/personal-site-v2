@@ -1,0 +1,108 @@
+html, body {
+  width: 100%;
+  height: 100%;
+
+  background-color: $yellow;
+  color: $grey;
+}
+
+header {
+  width: 100%;
+  height: 115px;
+
+  position: relative;
+  overflow: hidden;
+
+  @include flex();
+  @include justify-content(center);
+  @include align-items(center);
+
+  background-color: $purple;
+
+  menu {
+    position: absolute;
+
+    @include flex();
+    @include justify-content(flex-end);
+    @include align-items(flex-start);
+
+    top: 30px;
+    right: -200px;
+
+    width: 250px;
+    margin: 0;
+
+    #menu-control {
+      display: inline-block;
+
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+
+      cursor: pointer;
+
+      #menu-control-label {
+        font: 14px $dosis-stack;
+        text-align: center;
+
+        color: $yellow;
+      }
+
+      #menu-control-img {
+        -webkit-transition: -webkit-transform 1s ease-in-out;
+        -moz-transition:    -moz-transform 1s ease-in-out;
+        -o-transition:      -o-transform 1s ease-in-out;
+        -ms-transition:     -ms-transform 1s ease-in-out;
+        transition:         transform 1s ease-in-out;
+      }
+
+      #menu-control-img.rotate {
+        -webkit-transform: rotate(180deg);
+        -moz-transform:    rotate(180deg);
+        -o-transform:      rotate(180deg);
+        -ms-transform:     rotate(180deg);
+        transform:         rotate(180deg);
+      }
+    }
+
+    #menu-items {
+      display: inline-block;
+      width: 200px;
+
+      .menu-item {
+        display: inline-block;
+
+        @include inline-flex();
+        @include justify-content(center);
+        @include align-items(center);
+
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+
+        @include border-radius(50%);
+
+        background-color: $yellow;
+        background-repeat: no-repeat;
+
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+
+
+section {
+  padding: 10px 20px;
+
+  &.bg-green  { background-color: $green; }
+  &.bg-purple { background-color: $purple; }
+  &.bg-grey   { background-color: $grey; }
+
+  .ylw-font { color: $yellow; }
+}
+
+

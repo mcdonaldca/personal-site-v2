@@ -1,0 +1,7 @@
+# Ignore unnecessary files
+
+.DS_Store
+.sass-cache
+design/*
+ex.*
+*.map

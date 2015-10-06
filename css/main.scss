@@ -1,0 +1,11 @@
+/* Style sheet compiled using Sass */
+
+@import "_colors.scss";
+@import "_fonts.scss";
+@import "_mixins.scss";
+@import "_global.scss";
+
+// Page rules
+
+@import "pages/_index.scss";
+@import "pages/_about.scss";
