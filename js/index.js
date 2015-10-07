@@ -6,7 +6,7 @@ var camOptions = {
 };
 
 var camTimeline = new TimelineMax(camOptions),
-    camShapes   = $('svg.cam > g polygon, svg.cam > g path'),
+    camShapes   = $('svg.cam > polygon'),
     camStagger  = 0.00475,
     camDuration = 1.5;
 
@@ -27,3 +27,31 @@ camTimeline.staggerFromTo(camShapes, camDuration, camStaggerFrom, camStaggerTo, 
 $('svg.cam').click(function() {
   camTimeline.isActive() ? camTimeline.pause() : camTimeline.play();
 });
+
+
+
+
+
+
+
+
+var cloudPath = document.querySelector('.travel #mountain-front');
+
+var cloudLength = cloudPath.getTotalLength();
+// Clear any previous transition
+cloudPath.style.transition = cloudPath.style.WebkitTransition =
+  'none';
+// Set up the starting positions
+cloudPath.style.strokeDasharray = cloudLength + ' ' + cloudLength;
+cloudPath.style.strokeDashoffset = cloudLength;
+// Trigger a layout so styles are calculated & the browser
+// picks up the starting position before animating
+cloudPath.getBoundingClientRect();
+// Define our transition
+cloudPath.style.transition = cloudPath.style.WebkitTransition =
+  'stroke-dashoffset 2s linear';
+// Go!
+
+$(".travel-hover").hover(function() {
+  cloudPath.style.strokeDashoffset = '0';
+}, function(){});

@@ -54,6 +54,8 @@ header {
         -o-transition:      -o-transform 1s ease-in-out;
         -ms-transition:     -ms-transform 1s ease-in-out;
         transition:         transform 1s ease-in-out;
+
+        img { width: 35px; height: 35px; }
       }
 
       #menu-control-img.rotate {
@@ -94,15 +96,62 @@ header {
   }
 }
 
+.bg-yellow  { background-color: $yellow; }
+.bg-green   { background-color: $green; }
+.bg-purple  { background-color: $purple; }
+.bg-grey    { background-color: $grey; }
 
 section {
   padding: 10px 20px;
 
-  &.bg-green  { background-color: $green; }
-  &.bg-purple { background-color: $purple; }
-  &.bg-grey   { background-color: $grey; }
-
   .ylw-font { color: $yellow; }
 }
 
+
+div.button {
+  display: block;
+  margin: 20px 20px 10px;
+
+  a { 
+    display: block; 
+    width: auto;
+
+    text-decoration: none;
+
+    @include flex();
+    @include justify-content(center);
+    @include align-items(center);
+
+    .left,
+    .right {
+      width: 0; 
+      height: 0;
+
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent; 
+    }
+
+    .left  { border-right: 20px solid $yellow; }
+    .right { border-left: 20px solid $yellow; }
+
+    .text {
+      padding: 8px 10px 10px;
+      border: 3px solid $yellow;
+
+      color: $yellow;
+      font: 14px $dosis-stack;
+    }
+  }
+
+  &.grey {
+    .left  { border-right: 20px solid $grey; }
+    .right { border-left: 20px solid $grey; }
+
+    .text {
+      border-color: $grey;
+      color: $grey;
+      font-weight: 500;
+    }
+  }
+}
 

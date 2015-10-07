@@ -69,6 +69,9 @@ header {
         -o-transition: -o-transform 1s ease-in-out;
         -ms-transition: -ms-transform 1s ease-in-out;
         transition: transform 1s ease-in-out; }
+        header menu #menu-control #menu-control-img img {
+          width: 35px;
+          height: 35px; }
       header menu #menu-control #menu-control-img.rotate {
         -webkit-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
@@ -111,16 +114,71 @@ header {
           width: 25px;
           height: 25px; }
 
+.bg-yellow {
+  background-color: #FFEFC9; }
+
+.bg-green {
+  background-color: #9ABA9A; }
+
+.bg-purple {
+  background-color: #565B70; }
+
+.bg-grey {
+  background-color: #404040; }
+
 section {
   padding: 10px 20px; }
-  section.bg-green {
-    background-color: #9ABA9A; }
-  section.bg-purple {
-    background-color: #565B70; }
-  section.bg-grey {
-    background-color: #404040; }
   section .ylw-font {
     color: #FFEFC9; }
+
+div.button {
+  display: block;
+  margin: 20px 20px 10px; }
+  div.button a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center; }
+    div.button a .left,
+    div.button a .right {
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent; }
+    div.button a .left {
+      border-right: 20px solid #FFEFC9; }
+    div.button a .right {
+      border-left: 20px solid #FFEFC9; }
+    div.button a .text {
+      padding: 8px 10px 10px;
+      border: 3px solid #FFEFC9;
+      color: #FFEFC9;
+      font: 14px Dosis, Tahoma, sans-serif; }
+  div.button.grey .left {
+    border-right: 20px solid #404040; }
+  div.button.grey .right {
+    border-left: 20px solid #404040; }
+  div.button.grey .text {
+    border-color: #404040;
+    color: #404040;
+    font-weight: 500; }
 
 .sub-text {
   width: 100%;
@@ -158,7 +216,6 @@ section {
   -ms-justify-content: space-between;
   justify-content: space-between; }
   .highlights-container .highlight {
-    display: inline-block;
     margin: 10px;
     text-align: center; }
     .highlights-container .highlight .highlight-circle {
@@ -169,19 +226,23 @@ section {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
-      border-radius: 50%;
-      background-color: #9ABA9A; }
+      border-radius: 50%; }
     .highlights-container .highlight .title {
       padding-top: 5px;
       color: #FFEFC9;
       font: 20px Dosis, Tahoma, sans-serif;
       font-weight: 500; }
+      .highlights-container .highlight .title.grey-text {
+        color: #404040; }
     .highlights-container .highlight .title-sub {
       padding-bottom: 10px;
       color: #9ABA9A;
       font: 16px Dosis, Tahoma, sans-serif;
       font-weight: 300;
       line-height: 12px; }
+      .highlights-container .highlight .title-sub.ylw-text {
+        color: #FFEFC9;
+        font-weight: 500; }
 
 .paintbrush,
 .gear,
@@ -197,49 +258,7 @@ section {
     transition: all 1s ease;
     transform: translate(0); }
 
-.paintbrush g:nth-of-type(4n+1),
-.gear g:nth-of-type(4n+1),
-.lightbulb g:nth-of-type(4n+1) {
-  animation: p1 1s ease 1; }
-
-.paintbrush g:nth-of-type(4n+2),
-.gear g:nth-of-type(4n+2),
-.lightbulb g:nth-of-type(4n+2) {
-  animation: p2 1s ease 1; }
-
-.paintbrush g:nth-of-type(4n+3),
-.gear g:nth-of-type(4n+3),
-.lightbulb g:nth-of-type(4n+3) {
-  animation: p3 1s ease 1; }
-
-.paintbrush g:nth-of-type(4n+4),
-.gear g:nth-of-type(4n+4),
-.lightbulb g:nth-of-type(4n+4) {
-  animation: p4 1s ease 1; }
-
-@keyframes p1 {
-  0% {
-    transform: translate(-150%, -350%) rotate(260deg) translateZ(0); }
-  100% {
-    transform: translate(0); } }
-@keyframes p2 {
-  0% {
-    transform: translate(200%, -450%) rotate(425deg) translateZ(0); }
-  100% {
-    transform: translate(0); } }
-@keyframes p3 {
-  0% {
-    transform: translate(250%, 450%) rotate(162deg) translateZ(0); }
-  100% {
-    transform: translate(0); } }
-@keyframes p4 {
-  0% {
-    transform: translate(-250%, 400%) rotate(374deg) translateZ(0); }
-  100% {
-    transform: translate(0); } }
-.paintbrush-hover,
-.gear-hover,
-.lightbulb-hover {
+.hover {
   position: absolute;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -250,9 +269,13 @@ section {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: transparent;
+  background: transparent; }
+
+.paintbrush-hover,
+.gear-hover,
+.lightbulb-hover {
   animation-name: waitforit;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-in-out;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; }
