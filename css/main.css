@@ -126,10 +126,12 @@ header {
 .bg-grey {
   background-color: #404040; }
 
+.ylw-font {
+  color: #FFEFC9; }
+
 section {
-  padding: 10px 20px; }
-  section .ylw-font {
-    color: #FFEFC9; }
+  padding: 10px 5%;
+  width: 90%; }
 
 div.button {
   display: block;
@@ -207,6 +209,10 @@ div.button {
   /* NEW - Chrome */
   display: flex;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: center;
   -moz-align-items: center;
   -ms-align-items: center;
@@ -232,7 +238,7 @@ div.button {
       color: #FFEFC9;
       font: 20px Dosis, Tahoma, sans-serif;
       font-weight: 500; }
-      .highlights-container .highlight .title.grey-text {
+      .highlights-container .highlight .title.grey-font {
         color: #404040; }
     .highlights-container .highlight .title-sub {
       padding-bottom: 10px;
@@ -240,10 +246,28 @@ div.button {
       font: 16px Dosis, Tahoma, sans-serif;
       font-weight: 300;
       line-height: 12px; }
-      .highlights-container .highlight .title-sub.ylw-text {
+      .highlights-container .highlight .title-sub.ylw-font {
         color: #FFEFC9;
         font-weight: 500; }
 
+.building-stuff {
+  text-transform: uppercase;
+  font: 55px "Concert One";
+  color: #F37463;
+  text-align: center; }
+
+.disclaimer {
+  color: #9ABA9A;
+  font: 16px Dosis, Tahoma, sans-serif;
+  text-align: center;
+  margin-bottom: 10px; }
+
+@media screen and (min-width: 600px) {
+  .highlights-container {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; } }
 .paintbrush,
 .gear,
 .lightbulb {

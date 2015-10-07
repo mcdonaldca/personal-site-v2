@@ -30,6 +30,7 @@
   margin: 0 auto;
 
   @include flex();
+  @include flex-direction(column);
   @include align-items(center);
   @include justify-content(space-between);
 
@@ -56,7 +57,7 @@
       font: 20px $dosis-stack;
       font-weight: 500;
 
-      &.grey-text {
+      &.grey-font {
         color: $grey;
       }
     }
@@ -70,13 +71,51 @@
 
       line-height: 12px;
 
-      &.ylw-text {
+      &.ylw-font {
         color: $yellow;
         font-weight: 500;
       }
     }
   }
 }
+
+.building-stuff {
+  text-transform: uppercase;
+  font: 55px $concert-one-stack;
+  color: $pink;
+
+  text-align: center;
+}
+
+.disclaimer {
+  color: $green;
+  font: 16px $dosis-stack;
+
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 600px) {
+  .highlights-container {
+    @include flex-direction(row);
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 

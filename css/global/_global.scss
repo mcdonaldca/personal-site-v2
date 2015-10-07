@@ -101,10 +101,11 @@ header {
 .bg-purple  { background-color: $purple; }
 .bg-grey    { background-color: $grey; }
 
-section {
-  padding: 10px 20px;
+.ylw-font { color: $yellow; }
 
-  .ylw-font { color: $yellow; }
+section {
+  padding: 10px 5%;
+  width: 90%;
 }
 
 

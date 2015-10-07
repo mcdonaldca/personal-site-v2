@@ -1,3 +1,6 @@
+$(".c-a-m").fitText(1.4, { minFontSize: '22px', maxFontSize: '64px' });
+$(".building-stuff").fitText(.7, { minFontSize: '40px', maxFontSize: '129px' });
+
 var camOptions = {
   delay: .25,
   repeat: -1,
