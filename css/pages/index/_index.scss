@@ -1,0 +1,102 @@
+// Styles for index.html
+
+.sub-text {
+  width: 100%;
+  margin: 20px 0;
+
+  font: 16px $quando-stack;
+}
+
+.c-a-m {
+  width: 100%;
+  margin: 10px 0;
+
+  font: 55px $quando-stack;
+  letter-spacing: .08em;
+
+  text-shadow: 
+    $pink-highlight .01em .01em 0,
+    $pink-highlight .02em .02em 0,
+    $pink-highlight .03em .03em 0,
+    $pink-highlight .04em .04em 0,
+    $pink-highlight .05em .05em 0;
+}
+
+.highlights-container {
+  max-width: 750px;
+  margin: 0 auto;
+
+  @include flex();
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(center);
+
+  .highlight {
+    margin: 20px;
+
+    .highlight-circle {
+      position: relative;
+
+      width:  130px;
+      height: 130px;
+
+      margin: 0;
+      padding: 30px;
+
+      @include border-radius(50%);
+    }
+
+    .title {
+      padding-top: 5px;
+
+      color: $yellow;
+      font: 22px $dosis-stack;
+      font-weight: 500;
+
+      &.grey-font {
+        color: $grey;
+      }
+    }
+
+    .title-sub {
+      padding-bottom: 10px;
+
+      color: $green;
+      font: 18px $dosis-stack;
+      font-weight: 300;
+
+      line-height: 12px;
+
+      &.ylw-font {
+        color: $yellow;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.building-stuff {
+  text-transform: uppercase;
+  font: 55px $concert-one-stack;
+  color: $pink;
+}
+
+.disclaimer {
+  color: $green;
+  font: 16px $dosis-stack;
+
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 735px) {
+  .highlights-container {
+    @include justify-content(space-between);
+  }
+}

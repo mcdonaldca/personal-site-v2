@@ -32,6 +32,14 @@
 }
 
 
+@mixin flex-wrap($value) {
+  -webkit-flex-wrap: $value;
+     -moz-flex-wrap: $value;
+      -ms-flex-wrap: $value;
+          flex-wrap: $value;
+}
+
+
 @mixin justify-content($value) {
   -webkit-justify-content: $value;
      -moz-justify-content: $value;

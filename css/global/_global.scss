@@ -4,24 +4,27 @@ html, body {
 
   background-color: $yellow;
   color: $grey;
+  text-align: center;
 }
 
 header {
   width: 100%;
-  height: 115px;
+  height: 180px;
 
   position: relative;
   overflow: hidden;
 
   @include flex();
-  @include justify-content(center);
+  @include flex-direction(column);
   @include align-items(center);
 
   background-color: $purple;
 
-  menu {
-    position: absolute;
+  #logo {
+    margin: 20px 0;
+  }
 
+  menu {
     @include flex();
     @include justify-content(flex-end);
     @include align-items(flex-start);
@@ -29,47 +32,16 @@ header {
     top: 30px;
     right: -200px;
 
-    width: 250px;
+    width: 185px;
     margin: 0;
+    padding: 0;
 
     #menu-control {
-      display: inline-block;
-
-      width: 35px;
-      height: 35px;
-      margin-right: 15px;
-
-      cursor: pointer;
-
-      #menu-control-label {
-        font: 14px $dosis-stack;
-        text-align: center;
-
-        color: $yellow;
-      }
-
-      #menu-control-img {
-        -webkit-transition: -webkit-transform 1s ease-in-out;
-        -moz-transition:    -moz-transform 1s ease-in-out;
-        -o-transition:      -o-transform 1s ease-in-out;
-        -ms-transition:     -ms-transform 1s ease-in-out;
-        transition:         transform 1s ease-in-out;
-
-        img { width: 35px; height: 35px; }
-      }
-
-      #menu-control-img.rotate {
-        -webkit-transform: rotate(180deg);
-        -moz-transform:    rotate(180deg);
-        -o-transform:      rotate(180deg);
-        -ms-transform:     rotate(180deg);
-        transform:         rotate(180deg);
-      }
+      display: none;
     }
 
     #menu-items {
       display: inline-block;
-      width: 200px;
 
       .menu-item {
         display: inline-block;
@@ -91,7 +63,13 @@ header {
           width: 25px;
           height: 25px;
         }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
+
+      
     }
   }
 }
@@ -104,8 +82,8 @@ header {
 .ylw-font { color: $yellow; }
 
 section {
-  padding: 10px 5%;
-  width: 90%;
+  padding: 20px 2%;
+  width: 96%;
 }
 
 
@@ -128,25 +106,25 @@ div.button {
       width: 0; 
       height: 0;
 
-      border-top: 20px solid transparent;
-      border-bottom: 20px solid transparent; 
+      border-top: 23px solid transparent;
+      border-bottom: 23px solid transparent; 
     }
 
-    .left  { border-right: 20px solid $yellow; }
-    .right { border-left: 20px solid $yellow; }
+    .left  { border-right: 23px solid $yellow; }
+    .right { border-left: 23px solid $yellow; }
 
     .text {
       padding: 8px 10px 10px;
       border: 3px solid $yellow;
 
       color: $yellow;
-      font: 14px $dosis-stack;
+      font: 18px $dosis-stack;
     }
   }
 
   &.grey {
-    .left  { border-right: 20px solid $grey; }
-    .right { border-left: 20px solid $grey; }
+    .left  { border-right: 23px solid $grey; }
+    .right { border-left: 23px solid $grey; }
 
     .text {
       border-color: $grey;
@@ -156,3 +134,90 @@ div.button {
   }
 }
 
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 500px) {
+  header {
+    height: 115px;
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+
+    #logo {
+      margin: 0 0 0 5%;
+    }
+
+    menu {
+      position: absolute;
+      width: 250px;
+
+      #menu-control {
+        display: inline-block;
+
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+
+        cursor: pointer;
+
+        #menu-control-label {
+          font: 14px $dosis-stack;
+          color: $yellow;
+        }
+
+        #menu-control-img {
+          -webkit-transition: -webkit-transform 1s ease-in-out;
+          -moz-transition:    -moz-transform 1s ease-in-out;
+          -o-transition:      -o-transform 1s ease-in-out;
+          -ms-transition:     -ms-transform 1s ease-in-out;
+          transition:         transform 1s ease-in-out;
+
+          img { width: 35px; height: 35px; }
+        }
+
+        #menu-control-img.rotate {
+          -webkit-transform: rotate(180deg);
+          -moz-transform:    rotate(180deg);
+          -o-transform:      rotate(180deg);
+          -ms-transform:     rotate(180deg);
+          transform:         rotate(180deg);
+        }
+      }
+
+      #menu-items {
+        width: 200px;
+
+        .menu-item {
+          &:last-child {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  header {
+    @include justify-content(center);
+
+    #logo {
+      margin: 0;
+    }
+  }
+}

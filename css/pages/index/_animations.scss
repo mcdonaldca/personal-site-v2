@@ -1,0 +1,80 @@
+// svg and paths properties
+.paintbrush, 
+.gear, 
+.lightbulb {
+  position: absolute;
+  top: -105px;
+  left: -105px;
+
+  z-index: 800;
+  g {
+    transform-origin: center center;
+    transition: all 1s ease;
+    transform: translate(0);
+  }
+}
+
+.hover {
+  position: absolute;
+
+  @include border-radius(50%);
+  width:  190px;
+  height: 190px;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+  background: rgba(0,0,0,0);
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+
+  // add invisible hover element
+  .paintbrush-hover,
+  .gear-hover,
+  .lightbulb-hover {
+    animation-name: waitforit;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  // wait for animation then add hover element
+  @keyframes waitforit {
+    0%   { display: none; }
+    100% { display: block; }
+  }
+
+  // animate paths out
+  .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+1),
+   .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+1),
+        .gear-hover:hover +       .gear g:nth-of-type(4n+1) {
+    transform: translate(400%, 200%) rotate(-345deg) translateZ(0); 
+  }
+  .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+2),
+   .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+2) ,
+        .gear-hover:hover +       .gear g:nth-of-type(4n+2) { 
+    transform: translate(-350%, 300%) rotate(-360deg) translateZ(0); 
+  }
+  .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+3),
+   .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+3),
+        .gear-hover:hover +       .gear g:nth-of-type(4n+3) { 
+    transform: translate(-450%, -250%) rotate(-410deg) translateZ(0); 
+  }
+  .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+4),
+   .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+4),
+        .gear-hover:hover +       .gear g:nth-of-type(4n+4) { 
+    transform: translate(350%, -400%) rotate(-465deg) translateZ(0); 
+  }
+}
