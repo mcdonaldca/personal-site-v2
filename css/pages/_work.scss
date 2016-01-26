@@ -1,0 +1,68 @@
+.job {
+  position: relative;
+
+  h2 {
+    line-height: 1;
+    
+    .job-title {
+      @include font-size(20);
+      font-family: $dosis-stack;
+      line-height: $space;
+    }
+  }
+
+  h3 {
+    @include font-size(20);
+    font-family: $quando-stack;
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  p {
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  .job {
+    h2 {
+      br {
+        display: none;
+      }
+    }
+
+    h3 {
+      margin-right: $space;
+    }
+
+    p {
+      margin-left: 40px;
+      max-width: 620px;
+      padding-right: 150px;
+    }
+
+    img {
+      display: block;
+      position: absolute;
+
+      height: 130px;
+      width: 130px;
+
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

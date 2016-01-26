@@ -1,77 +1,63 @@
+// ----------------------------------
+//      Overarching/General Styles
+// ----------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html, body {
   width: 100%;
   height: 100%;
 
   background-color: $yellow;
   color: $grey;
-  text-align: center;
+
+  font-size: 62.5%;
 }
 
-header {
-  width: 100%;
-  height: 180px;
+h1 {
+  @include font-size(45);
+  font-family: $quando-stack;
+  letter-spacing: .08em;
+  text-align: center;
 
+  text-shadow: $pink-highlight .01em .01em 0,
+    $pink-highlight .02em .02em 0,
+    $pink-highlight .03em .03em 0,
+    $pink-highlight .04em .04em 0,
+    $pink-highlight .05em .05em 0;
+
+  margin: 0;
+}
+
+h2 {
+  @include font-size(40);
+  font-family: $concert-one-stack;
+  margin: 0; 
+}
+
+p {
+  @include font-size(18);
+  font-family: $dosis-stack;
+  padding: $space 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  padding: $space 0;
+}
+
+.container {
   position: relative;
-  overflow: hidden;
-
-  @include flex();
-  @include flex-direction(column);
-  @include align-items(center);
-
-  background-color: $purple;
-
-  #logo {
-    margin: 20px 0;
-  }
-
-  menu {
-    @include flex();
-    @include justify-content(flex-end);
-    @include align-items(flex-start);
-
-    top: 30px;
-    right: -200px;
-
-    width: 185px;
-    margin: 0;
-    padding: 0;
-
-    #menu-control {
-      display: none;
-    }
-
-    #menu-items {
-      display: inline-block;
-
-      .menu-item {
-        display: inline-block;
-
-        @include inline-flex();
-        @include justify-content(center);
-        @include align-items(center);
-
-        width: 35px;
-        height: 35px;
-        margin-right: 15px;
-
-        @include border-radius(50%);
-
-        background-color: $yellow;
-        background-repeat: no-repeat;
-
-        img {
-          width: 25px;
-          height: 25px;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      
-    }
-  }
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .bg-yellow  { background-color: $yellow; }
@@ -79,17 +65,22 @@ header {
 .bg-purple  { background-color: $purple; }
 .bg-grey    { background-color: $grey; }
 
-.ylw-font { color: $yellow; }
+.yellow-font { color: $yellow; }
+.green-font  { color: $green; }
+.purple-font { color: $purple; }
+.pink-font   { color: $pink; }
 
-section {
-  padding: 20px 2%;
-  width: 96%;
+.bg-green {
+  .purple-font {
+    // Appropriate accessibility ratio
+    color: $purple-AA;
+  }
 }
 
 
 div.button {
   display: block;
-  margin: 20px 20px 10px;
+  margin: $space;
 
   a { 
     display: block; 
@@ -118,7 +109,8 @@ div.button {
       border: 3px solid $yellow;
 
       color: $yellow;
-      font: 18px $dosis-stack;
+      @include font-size(18);
+      font-family: $dosis-stack;
     }
   }
 
@@ -143,9 +135,94 @@ div.button {
 
 
 
+// ----------------------------------
+//      Header Styles
+// ----------------------------------
+
+header {
+  width: 100%;
+  height: 170px;
+
+  position: relative;
+  overflow: hidden;
+
+  @include flex();
+  @include flex-direction(column);
+  @include align-items(center);
+
+  background-color: $purple;
+
+  #logo {
+    margin: $space 0;
+  }
+
+  menu {
+    @include flex();
+    @include justify-content(flex-end);
+    @include align-items(flex-start);
+
+    width: 216px;
+    margin: 0;
+    padding: 0;
+
+    #menu-control {
+      display: none;
+    }
+
+    .items {
+      display: inline-block;
+
+      .item {
+        display: inline-block;
+        margin-right: 15px;
+
+        .icon {
+          @include inline-flex();
+          @include justify-content(center);
+          @include align-items(center);
+
+          width: 35px;
+          height: 35px;
+
+          @include border-radius(50%);
+          background-color: $yellow;
+
+          img {
+            width: 25px;
+            height: 25px;
+          }
+        }
+
+        .label {
+          @include font-size(14);
+          font-family: $dosis-stack;
+          color: $yellow;
+        }
+
+        &:first-child {
+          margin-left: 8px;
+        }
+
+        &:last-child {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 500px) {
   header {
-    height: 115px;
+    height: 105px;
     @include flex-direction(row);
     @include justify-content(flex-start);
 
@@ -155,6 +232,11 @@ div.button {
 
     menu {
       position: absolute;
+      text-align: center;
+
+      top: 30px;
+      right: -200px;
+
       width: 250px;
 
       #menu-control {
@@ -167,7 +249,8 @@ div.button {
         cursor: pointer;
 
         #menu-control-label {
-          font: 14px $dosis-stack;
+          @include font-size(11.5);
+          font-family: $dosis-stack;
           color: $yellow;
         }
 
@@ -190,10 +273,18 @@ div.button {
         }
       }
 
-      #menu-items {
+      .items {
         width: 200px;
 
-        .menu-item {
+        .item {
+          .label {
+            font-size: 11px;
+          }
+
+          &:first-child {
+            margin-left: 0px;
+          }
+
           &:last-child {
             margin-right: 15px;
           }
@@ -219,5 +310,29 @@ div.button {
     #logo {
       margin: 0;
     }
+
+    menu .items .item .label {
+      display: none;
+    }
   }
+}
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------
+//      Footer Styles
+// ----------------------------------
+
+footer {
+  height: 50px;
+  background: $purple;
+
+  text-align: center;
 }

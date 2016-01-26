@@ -2,17 +2,22 @@
 
 .sub-text {
   width: 100%;
-  margin: 20px 0;
+  margin: $space 0;
 
-  font: 16px $quando-stack;
+  @include font-size(16);
+  font-family: $quando-stack;
+  text-align: center;
 }
 
 .c-a-m {
   width: 100%;
-  margin: 10px 0;
+  margin: $space 0;
 
-  font: 55px $quando-stack;
+  @include font-size(55);
+  line-height: 1.1;
+  font-family: $quando-stack;
   letter-spacing: .08em;
+  text-align: center;
 
   text-shadow: 
     $pink-highlight .01em .01em 0,
@@ -25,6 +30,7 @@
 .highlights-container {
   max-width: 750px;
   margin: 0 auto;
+  text-align: center;
 
   @include flex();
   @include flex-wrap(wrap);
@@ -32,7 +38,7 @@
   @include justify-content(center);
 
   .highlight {
-    margin: 20px;
+    margin: $space;
 
     .highlight-circle {
       position: relative;
@@ -50,7 +56,8 @@
       padding-top: 5px;
 
       color: $yellow;
-      font: 22px $dosis-stack;
+      @include font-size(22);
+      font-family: $dosis-stack;
       font-weight: 500;
 
       &.grey-font {
@@ -61,8 +68,8 @@
     .title-sub {
       padding-bottom: 10px;
 
-      color: $green;
-      font: 18px $dosis-stack;
+      @include font-size(18);
+      font-family: $dosis-stack;
       font-weight: 300;
 
       line-height: 12px;
@@ -77,15 +84,20 @@
 
 .building-stuff {
   text-transform: uppercase;
-  font: 55px $concert-one-stack;
+  @include font-size(55);
+  font-family: $concert-one-stack;
+  line-height: 1;
+  text-align: center;
   color: $pink;
 }
 
 .disclaimer {
+  @include font-size();
+  font-family: $dosis-stack;
+  text-align: center;
   color: $green;
-  font: 16px $dosis-stack;
 
-  margin-bottom: 10px;
+  margin-bottom: $space;
 }
 
 
@@ -95,7 +107,7 @@
 
 
 
-@media screen and (min-width: 735px) {
+@media screen and (min-width: 785px) {
   .highlights-container {
     @include justify-content(space-between);
   }

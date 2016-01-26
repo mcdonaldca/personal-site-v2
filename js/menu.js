@@ -23,15 +23,7 @@ $('#menu-control').click(function() {
   }
 });
 
-var labelReset = function() {
-  var label = $('#menu-control-label');
-  label.html('hide');
-    label.animate({
-      'margin-left': '0px'
-    }, 1);
-}
-
-var labelAnimationLength = 250;
+var labelAnimationLength = 200;
 $("#menu-control-img").hover(function() {
     if ($("#menu-control-img").hasClass('rotate')) {
       var label = $('#menu-control-label');
@@ -42,34 +34,23 @@ $("#menu-control-img").hover(function() {
     }
   }, function(){});
 
-$("#about").hover(function() {
-    var label = $('#menu-control-label');
-    label.html('about');
-    label.animate({
-      'margin-left': '53px'
-    }, labelAnimationLength);
-  }, function(){});
+var menuOptionHover = function(option, px) {
+  return function() {
+    if ($(window).width() >= 768) {
+      var label = $('#menu-control-label');
+      label.html(option);
+      label.animate({
+        'margin-left': px
+      }, labelAnimationLength);
+    }
+  }
+}
 
-$("#resume").hover(function() {
-    var label = $('#menu-control-label');
-    label.html('resume');
-    label.animate({
-      'margin-left': '98px'
-    }, labelAnimationLength);
-  }, function(){});
+var menuOptions = [['about', '55px'], ['resume', '101px'], ['work', '157px'], ['projects', '200px']];
 
-$("#work").hover(function() {
-    var label = $('#menu-control-label');
-    label.html('work');
-    label.animate({
-      'margin-left': '154px'
-    }, labelAnimationLength);
-  }, function(){});
+for(i = 0; i < menuOptions.length; i++) {
+  var option = menuOptions[i][0];
+  var px = menuOptions[i][1];
 
-$("#projects").hover(function() {
-    var label = $('#menu-control-label');
-    label.html('projects');
-    label.animate({
-      'margin-left': '197px'
-    }, labelAnimationLength);
-  }, function(){});
+  $('#' + option).hover(menuOptionHover(option, px), function(){});
+}
