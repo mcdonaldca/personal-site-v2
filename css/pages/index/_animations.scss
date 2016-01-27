@@ -70,33 +70,33 @@
   .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+1),
    .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+1),
         .gear-hover:hover +       .gear g:nth-of-type(4n+1) {
-    -webkit-transform: translate(400%, 200%) rotate(-345deg) translateZ(0); 
-       -moz-transform: translate(400%, 200%) rotate(-345deg) translateZ(0); 
-        -ms-transform: translate(400%, 200%) rotate(-345deg) translateZ(0); 
-            transform: translate(400%, 200%) rotate(-345deg) translateZ(0);
+    -webkit-transform: translate(400%, 200%); 
+       -moz-transform: translate(400%, 200%); 
+        -ms-transform: translate(400%, 200%); 
+            transform: translate(400%, 200%);
   }
   .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+2),
    .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+2) ,
         .gear-hover:hover +       .gear g:nth-of-type(4n+2) { 
-    -webkit-transform: translate(-350%, 300%) rotate(-360deg) translateZ(0); 
-       -moz-transform: translate(-350%, 300%) rotate(-360deg) translateZ(0); 
-        -ms-transform: translate(-350%, 300%) rotate(-360deg) translateZ(0); 
-            transform: translate(-350%, 300%) rotate(-360deg) translateZ(0); 
+    -webkit-transform: translate(-350%, 300%); 
+       -moz-transform: translate(-350%, 300%);
+        -ms-transform: translate(-350%, 300%);
+            transform: translate(-350%, 300%);
   }
   .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+3),
    .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+3),
         .gear-hover:hover +       .gear g:nth-of-type(4n+3) { 
-    -webkit-transform: translate(-450%, -250%) rotate(-410deg) translateZ(0); 
-       -moz-transform: translate(-450%, -250%) rotate(-410deg) translateZ(0); 
-        -ms-transform: translate(-450%, -250%) rotate(-410deg) translateZ(0); 
-            transform: translate(-450%, -250%) rotate(-410deg) translateZ(0); 
+    -webkit-transform: translate(-450%, -250%);
+       -moz-transform: translate(-450%, -250%);
+        -ms-transform: translate(-450%, -250%);
+            transform: translate(-450%, -250%);
   }
   .paintbrush-hover:hover + .paintbrush g:nth-of-type(4n+4),
    .lightbulb-hover:hover +  .lightbulb g:nth-of-type(4n+4),
         .gear-hover:hover +       .gear g:nth-of-type(4n+4) { 
-    -webkit-transform: translate(350%, -400%) rotate(-465deg) translateZ(0);
-       -moz-transform: translate(350%, -400%) rotate(-465deg) translateZ(0);
-        -ms-transform: translate(350%, -400%) rotate(-465deg) translateZ(0);
-            transform: translate(350%, -400%) rotate(-465deg) translateZ(0); 
+    -webkit-transform: translate(350%, -400%);
+       -moz-transform: translate(350%, -400%);
+        -ms-transform: translate(350%, -400%);
+            transform: translate(350%, -400%); 
   }
 }
