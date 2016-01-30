@@ -111,6 +111,8 @@ div.button {
       color: $yellow;
       @include font-size(18);
       font-family: $dosis-stack;
+
+      @include transition(padding .2s ease-in-out);
     }
   }
 
@@ -123,6 +125,10 @@ div.button {
       color: $grey;
       font-weight: 500;
     }
+  }
+
+  &:hover a .text {
+    padding: 8px 25px 10px;
   }
 }
 

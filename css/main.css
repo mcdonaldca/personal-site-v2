@@ -112,7 +112,12 @@ div.button {
       color: #FFEFC9;
       font-size: 18px;
       font-size: 1.8rem;
-      font-family: Dosis, Tahoma, sans-serif; }
+      font-family: Dosis, Tahoma, sans-serif;
+      -webkit-transition: padding 0.2s ease-in-out;
+      -moz-transition: padding 0.2s ease-in-out;
+      -o-transition: padding 0.2s ease-in-out;
+      -ms-transition: padding 0.2s ease-in-out;
+      transition: padding 0.2s ease-in-out; }
   div.button.grey .left {
     border-right: 23px solid #404040; }
   div.button.grey .right {
@@ -121,6 +126,8 @@ div.button {
     border-color: #404040;
     color: #404040;
     font-weight: 500; }
+  div.button:hover a .text {
+    padding: 8px 25px 10px; }
 
 header {
   width: 100%;
