@@ -1,5 +1,7 @@
-$('#menu-control').click(function() {
-  var menuImg = $('#menu-control-img')
+var $window = $(window);
+
+function menuClick() {
+  var menuImg = $('#menu-control-icon');
   menuImg.toggleClass('rotate');
 
   if (menuImg.hasClass('rotate')) {
@@ -8,49 +10,52 @@ $('#menu-control').click(function() {
     $('#menu-control-label').html('menu');
   }
 
-  var animationLength = 1000;
+  var animationOpenLength = 750;
+  var animationCloseLength = 400;
   var menu = $('menu');
   menu.toggleClass('visible');
 
   if (menu.hasClass("visible")) {
     menu.animate({
       right: '0px'
-    }, animationLength); 
+    }, animationOpenLength); 
   } else {
     menu.animate({
-      right: '-200px'
-    }, animationLength);  
-  }
-});
+      right: '-210px'
+    }, animationCloseLength);  
+  }  
+}
 
-var labelAnimationLength = 200;
-$("#menu-control-img").hover(function() {
-    if ($("#menu-control-img").hasClass('rotate')) {
-      var label = $('#menu-control-label');
-      label.html('hide');
-      label.animate({
-        'margin-left': '0px'
-      }, labelAnimationLength);
-    }
-  }, function(){});
+function iconMouseOver(el) {
+  // This is so gross, I'm so sorry
+  $(el.parentElement.childNodes[3]).css("color", "#FFEFC9");
+}
 
-var menuOptionHover = function(option, px) {
+function iconMouseOut(el) {
+  $(el.parentElement.childNodes[3]).css("color", "#565B70");
+}
+
+function mobileWrap(func) {
   return function() {
-    if ($(window).width() >= 768) {
-      var label = $('#menu-control-label');
-      label.html(option);
-      label.animate({
-        'margin-left': px
-      }, labelAnimationLength);
+    if ($window.width() > 753) {
+      func(this);
     }
   }
 }
 
-var menuOptions = [['about', '55px'], ['resume', '101px'], ['work', '157px'], ['projects', '200px']];
-
-for(i = 0; i < menuOptions.length; i++) {
-  var option = menuOptions[i][0];
-  var px = menuOptions[i][1];
-
-  $('#' + option).hover(menuOptionHover(option, px), function(){});
+function onResize() {
+  $("menu .icon.static").each(function() {
+    if ($window.width() < 753) {
+      iconMouseOver(this);
+    } else {
+      iconMouseOut(this);
+    }
+    if ($('#menu-control-icon').hasClass('rotate'))  {
+      menuClick();
+    } 
+  });
 }
+
+$('#menu-control').click(menuClick);
+$("menu .icon.static").hover(mobileWrap(iconMouseOver), mobileWrap(iconMouseOut));
+$(window).resize(onResize);

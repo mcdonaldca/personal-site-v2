@@ -154,6 +154,11 @@ header {
 
   #logo {
     margin: $space 0;
+
+    svg {
+      width: 132px;
+      height: 50px;
+    }
   }
 
   menu {
@@ -161,7 +166,6 @@ header {
     @include justify-content(flex-end);
     @include align-items(flex-start);
 
-    width: 216px;
     margin: 0;
     padding: 0;
 
@@ -169,43 +173,45 @@ header {
       display: none;
     }
 
-    .items {
+    .item {
       display: inline-block;
+      margin-right: 18px;
 
-      .item {
+      .icon {
         display: inline-block;
-        margin-right: 15px;
+        text-align: center;
 
-        .icon {
-          @include inline-flex();
-          @include justify-content(center);
-          @include align-items(center);
+        width: 45px;
+        height: 45px;
 
-          width: 35px;
-          height: 35px;
+        @include border-radius(50%);
+        background-color: $yellow;
 
-          @include border-radius(50%);
-          background-color: $yellow;
+        img {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
 
-          img {
-            width: 25px;
-            height: 25px;
-          }
+          width: 30px;
+          height: 30px;
         }
+      }
 
-        .label {
-          @include font-size(14);
-          font-family: $dosis-stack;
-          color: $yellow;
-        }
+      .label {
+        margin-top: 2px;
 
-        &:first-child {
-          margin-left: 8px;
-        }
+        color: $yellow;
+        font-family: $dosis-stack;
+        @include font-size(14);
+        text-align: center;
+      }
 
-        &:last-child {
-          margin-right: 8px;
-        }
+      &:nth-child(2) {
+        margin-left: 8px;
+      }
+
+      &:last-child {
+        margin-right: 8px;
       }
     }
   }
@@ -228,66 +234,80 @@ header {
 
     #logo {
       margin: 0 0 0 5%;
+
+      svg {
+        width: 159px;
+        height: 60px;
+      }
     }
 
     menu {
       position: absolute;
-      text-align: center;
 
       top: 30px;
-      right: -200px;
-
-      width: 250px;
+      right: -210px;
 
       #menu-control {
         display: inline-block;
-
-        width: 35px;
-        height: 35px;
-        margin-right: 15px;
+        text-align: center;
 
         cursor: pointer;
 
-        #menu-control-label {
-          @include font-size(11.5);
-          font-family: $dosis-stack;
+        .icon {
+          -webkit-transition: -webkit-transform .4s ease-in-out;
+          -moz-transition:    -moz-transform .4s ease-in-out;
+          -o-transition:      -o-transform .4s ease-in-out;
+          -ms-transition:     -ms-transform .4s ease-in-out;
+          transition:         transform .4s ease-in-out;
+
+          background-color: transparent;
+
+          img { 
+            width: 35px; 
+            height: 35px; 
+          }
+        }
+
+        .icon.rotate {
+          @include transform(rotate(180deg));
+
+          -webkit-transition: -webkit-transform .75s ease-in-out;
+          -moz-transition:    -moz-transform .75s ease-in-out;
+          -o-transition:      -o-transform .75s ease-in-out;
+          -ms-transition:     -ms-transform .75s ease-in-out;
+          transition:         transform .75s ease-in-out;
+        }
+
+        .label {
+          margin-top: 2px;
+
           color: $yellow;
-        }
-
-        #menu-control-img {
-          -webkit-transition: -webkit-transform 1s ease-in-out;
-          -moz-transition:    -moz-transform 1s ease-in-out;
-          -o-transition:      -o-transform 1s ease-in-out;
-          -ms-transition:     -ms-transform 1s ease-in-out;
-          transition:         transform 1s ease-in-out;
-
-          img { width: 35px; height: 35px; }
-        }
-
-        #menu-control-img.rotate {
-          -webkit-transform: rotate(180deg);
-          -moz-transform:    rotate(180deg);
-          -o-transform:      rotate(180deg);
-          -ms-transform:     rotate(180deg);
-          transform:         rotate(180deg);
+          font-family: $dosis-stack;
+          @include font-size(11);
         }
       }
 
-      .items {
-        width: 200px;
+      .item {
+        .icon {
+          height: 35px;
+          width: 35px;
 
-        .item {
-          .label {
-            font-size: 11px;
+          img {
+            height: 25px;
+            width: 25px;
           }
+        }
 
-          &:first-child {
-            margin-left: 0px;
-          }
+        .label {
+          @include font-size(11);
+        }
 
-          &:last-child {
-            margin-right: 15px;
-          }
+        &:nth-child(2) {
+          margin-left: 0px;
+        }
+
+        &:last-child {
+          margin-right: 16px;
         }
       }
     }
@@ -311,8 +331,10 @@ header {
       margin: 0;
     }
 
-    menu .items .item .label {
-      display: none;
+    menu .item .label {
+      color: $purple;
+
+      @include transition(color .1s ease-in-out);
     }
   }
 }
