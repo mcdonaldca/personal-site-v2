@@ -60,3 +60,20 @@
   font-size: $size + px;
   font-size: ($size / 10) + rem;
 }
+
+
+@mixin transition($properties...) {
+  -webkit-transition: ($properties);
+     -moz-transition: ($properties);
+       -o-transition: ($properties);
+      -ms-transition: ($properties);
+          transition: ($properties);
+}
+
+
+@mixin transform($properties...) {
+  -webkit-transform: ($properties);
+     -moz-transform: ($properties);
+      -ms-transform: ($properties);
+          transform: ($properties);  
+}
