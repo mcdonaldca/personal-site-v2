@@ -549,6 +549,8 @@ footer {
     width: 33%; } }
 @media screen and (min-width: 850px) {
   .project {
-    width: 25%; } }
+    width: 25%;
+    font-size: 14px;
+    font-size: 1.4rem; } }
 
 /*# sourceMappingURL=main.css.map */

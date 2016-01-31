@@ -53,5 +53,6 @@
 @media screen and (min-width: 850px) {
   .project {
     width: 25%;
+    @include font-size(14);
   }
 }
