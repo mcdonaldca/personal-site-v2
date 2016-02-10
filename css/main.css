@@ -294,6 +294,24 @@ footer {
   height: 50px;
   background: #565B70;
   text-align: center; }
+  footer a {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin: 10px 5px;
+    background-size: 30px 60px; }
+    footer a svg {
+      height: 30px;
+      width: 30px; }
+      footer a svg path {
+        fill: #FFEFC9;
+        -webkit-transition: fill 0.15s ease-in-out;
+        -moz-transition: fill 0.15s ease-in-out;
+        -o-transition: fill 0.15s ease-in-out;
+        -ms-transition: fill 0.15s ease-in-out;
+        transition: fill 0.15s ease-in-out; }
+    footer a:hover svg path {
+      fill: #F37463; }
 
 .sub-text {
   width: 100%;

@@ -363,4 +363,27 @@ footer {
   background: $purple;
 
   text-align: center;
+
+  a {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+
+    margin: 10px 5px;
+    background-size: 30px 60px;
+
+    svg {
+      height: 30px;
+      width: 30px;
+
+      path {
+        fill: $yellow;
+        @include transition(fill .15s ease-in-out)
+      }
+    }
+
+    &:hover svg path {
+      fill: $pink;
+    }
+  }
 }
