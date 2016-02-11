@@ -317,17 +317,32 @@ footer {
   -ms-justify-content: center;
   justify-content: center; }
   .highlights-container .highlight {
-    margin: 20px; }
+    margin: 20px;
+    width: 180px; }
     .highlights-container .highlight .highlight-circle {
       position: relative;
       width: 130px;
       height: 130px;
-      margin: 0;
-      padding: 30px;
+      margin: 0 0 0 25px;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       border-radius: 50%; }
+      .highlights-container .highlight .highlight-circle .paintbrush,
+      .highlights-container .highlight .highlight-circle .gear,
+      .highlights-container .highlight .highlight-circle .lightbulb {
+        position: absolute;
+        top: -72px;
+        left: -72px;
+        width: 275px;
+        height: 275px; }
+      .highlights-container .highlight .highlight-circle .travel,
+      .highlights-container .highlight .highlight-circle .hackathons,
+      .highlights-container .highlight .highlight-circle .plants {
+        position: relative;
+        top: 20px;
+        width: 90px;
+        height: 90px; }
     .highlights-container .highlight .title {
       padding-top: 5px;
       color: #FFEFC9;
@@ -365,18 +380,49 @@ footer {
   color: #9ABA9A;
   margin-bottom: 20px; }
 
-@media screen and (min-width: 785px) {
-  .highlights-container {
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -ms-justify-content: space-between;
-    justify-content: space-between; } }
+@media screen and (min-width: 880px) {
+  .highlights-container .highlight {
+    width: 190px; }
+    .highlights-container .highlight .highlight-circle {
+      width: 160px;
+      height: 160px;
+      margin: 0 0 0 10px; }
+      .highlights-container .highlight .highlight-circle .paintbrush,
+      .highlights-container .highlight .highlight-circle .gear,
+      .highlights-container .highlight .highlight-circle .lightbulb {
+        top: -81px;
+        left: -81px;
+        width: 325px;
+        height: 325px; }
+      .highlights-container .highlight .highlight-circle .travel,
+      .highlights-container .highlight .highlight-circle .hackathons,
+      .highlights-container .highlight .highlight-circle .plants {
+        top: 25px;
+        width: 110px;
+        height: 110px; } }
+@media screen and (min-width: 1024px) {
+  .highlights-container .highlight {
+    width: 200px; }
+    .highlights-container .highlight .highlight-circle {
+      width: 190px;
+      height: 190px;
+      margin: 0 0 0 5px; }
+      .highlights-container .highlight .highlight-circle .paintbrush,
+      .highlights-container .highlight .highlight-circle .gear,
+      .highlights-container .highlight .highlight-circle .lightbulb {
+        top: -105px;
+        left: -105px;
+        width: 400px;
+        height: 400px; }
+      .highlights-container .highlight .highlight-circle .travel,
+      .highlights-container .highlight .highlight-circle .hackathons,
+      .highlights-container .highlight .highlight-circle .plants {
+        top: 30px;
+        width: 130px;
+        height: 130px; } }
 .paintbrush,
 .gear,
 .lightbulb {
-  position: absolute;
-  top: -105px;
-  left: -105px;
   z-index: 800; }
   .paintbrush g,
   .gear g,
@@ -391,8 +437,8 @@ footer {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  width: 190px;
-  height: 190px;
+  width: 130px;
+  height: 130px;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -454,6 +500,14 @@ footer {
     -moz-transform: translate(350%, -400%);
     -ms-transform: translate(350%, -400%);
     transform: translate(350%, -400%); } }
+@media screen and (min-width: 880px) {
+  .hover {
+    width: 160px;
+    height: 160px; } }
+@media screen and (min-width: 1024px) {
+  .hover {
+    width: 190px;
+    height: 190px; } }
 #face {
   position: fixed;
   right: 0;

@@ -2,10 +2,6 @@
 .paintbrush, 
 .gear, 
 .lightbulb {
-  position: absolute;
-  top: -105px;
-  left: -105px;
-
   z-index: 800;
   g {
     transform-origin: center center;
@@ -18,8 +14,8 @@
   position: absolute;
 
   @include border-radius(50%);
-  width:  190px;
-  height: 190px;
+  width:  130px;
+  height: 130px;
 
   top: 0;
   left: 0;
@@ -98,5 +94,37 @@
        -moz-transform: translate(350%, -400%);
         -ms-transform: translate(350%, -400%);
             transform: translate(350%, -400%); 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 880px) {
+  .hover {
+    width:  160px;
+    height: 160px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+  .hover {
+    width:  190px;
+    height: 190px;
   }
 }
