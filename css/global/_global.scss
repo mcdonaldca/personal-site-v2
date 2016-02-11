@@ -355,13 +355,13 @@ footer {
       height: 30px;
       width: 30px;
 
-      path {
-        fill: $yellow;
-        @include transition(fill .15s ease-in-out)
+      circle {
+        fill: $purple;
+        @include transition(fill .2s ease-in-out)
       }
     }
 
-    &:hover svg path {
+    &:hover svg circle {
       fill: $pink;
     }
   }
