@@ -185,7 +185,7 @@ header {
         @include border-radius(50%);
         background-color: $yellow;
 
-        img {
+        svg {
           width: 30px;
           height: 30px;
           padding-top: 8px;
@@ -238,7 +238,7 @@ header {
           height: 35px;
           width: 35px;
 
-          img {
+          svg {
             height: 25px;
             width: 25px;
             padding-top: 5px;
@@ -268,13 +268,24 @@ header {
 
 @media screen and (min-width: 768px) {
   header menu .item {
+    .icon svg path {
+      fill: $pink;
+      @include transition(fill .1s ease-in-out);
+    }
+
     .label {
       color: $purple;
       @include transition(color .1s ease-in-out);
     }
 
-    &:hover .label {
-      color: $yellow;
+    &:hover { 
+      .icon svg path {
+        fill: $purple;
+      }
+
+      .label {
+        color: $yellow;
+      }
     }
   }
 }
@@ -309,7 +320,7 @@ header {
           height: 40px;
           width: 40px;
 
-          img {
+          svg {
             height: 28px;
             width: 28px;
             padding-top: 6px;
