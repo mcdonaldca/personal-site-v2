@@ -12,13 +12,6 @@
     margin-top: $space / 2;
     margin-bottom: 0;
     width: 80%;
-
-    @include transition(all 0.2s ease-in);
-
-    &:hover {
-      margin-top: 0;
-      margin-bottom: $space / 2;
-    }
   }
 
   .subtitle {
@@ -38,6 +31,28 @@
 @media screen and (min-width: 600px) {
   .project {
     width: 33%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  .project {
+    img {
+      @include transition(all 0.2s ease-in);
+
+      &:hover {
+        margin-top: 0;
+        margin-bottom: $space / 2;
+      }
+    }
   }
 }
 

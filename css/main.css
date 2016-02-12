@@ -571,7 +571,15 @@ footer {
   .project img {
     margin-top: 10px;
     margin-bottom: 0;
-    width: 80%;
+    width: 80%; }
+  .project .subtitle {
+    margin-top: .75em; }
+
+@media screen and (min-width: 600px) {
+  .project {
+    width: 33%; } }
+@media screen and (min-width: 768px) {
+  .project img {
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
@@ -579,13 +587,7 @@ footer {
     transition: all 0.2s ease-in; }
     .project img:hover {
       margin-top: 0;
-      margin-bottom: 10px; }
-  .project .subtitle {
-    margin-top: .75em; }
-
-@media screen and (min-width: 600px) {
-  .project {
-    width: 33%; } }
+      margin-bottom: 10px; } }
 @media screen and (min-width: 850px) {
   .project {
     width: 25%;
