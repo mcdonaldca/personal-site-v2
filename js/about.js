@@ -1,5 +1,5 @@
 var faceOptions = {
-  delay: .25,
+  delay: .15,
   repeat: -1,
   repeatDelay: 0.5,
   yoyo: true

@@ -1,5 +1,16 @@
-#face {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+.face-container {
+  position: relative;
+
+  .face {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+#about {
+ .container {
+  width: 40%; 
+  margin-left: 5%;
+ } 
 }
